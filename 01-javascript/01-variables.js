@@ -87,7 +87,7 @@ if(undefined){
 
 const lesly = {
     nombre: "Lesly", // llave: valor
-    false : 'Tipanluiza',
+    apellido : 'Tipanluiza',
     edad : 23,
     hijos : null,
     zapatos : undefined,
@@ -98,3 +98,73 @@ const lesly = {
     },
     mascotas: ['mily','shapy','fiore'],
 };
+
+//Acceder a las propiedades del objeto
+lesly.nombre; //"Lesly"
+lesly.apellido; //'Tipanluiza'
+lesly["nombre"]; // "Lesly"
+console.log(lesly);
+lesly.nombre = "Marisol";
+console.log(lesly);
+lesly["nombre"] = "Lesly";
+lesly.sueldo; //undefined
+console.log(lesly.sueldo);
+
+lesly.sueldo = 1.2;
+console.log(lesly.sueldo); //1.2
+lesly["gastos"] = 0.8;
+console.log(lesly.gastos); //0.8
+lesly.nombre = undefined;
+console.log(lesly);
+console.log(Object.keys(lesly));
+console.log(Object.values(lesly));
+
+delete lesly.nombre; // Eliminar la llave "nombre"
+console.log(lesly);
+
+//Variables por valor o referencia
+//Variables por valor en JS son las primitivas
+
+let edadLesly = 23;
+let edadMarisol = edadLesly;
+
+console.log(edadLesly); //23
+console.log(edadMarisol);//23
+edadLesly = edadLesly +1;
+console.log(edadLesly); //24
+console.log(edadMarisol);//23
+
+//Variables por referencia: object ({},[])
+// let rafael = {
+//     nombre: "Rafael"
+// }
+// let lenin = rafael;
+// console.log(rafael);
+// console.log(lenin);
+// lenin.nombre = "Lenin";
+// console.log(rafael);
+// console.log(lenin);
+//
+// delete rafael.nombre;
+// console.log(rafael);
+// console.log(lenin);
+
+let rafael = {
+     nombre: "Rafael"
+};
+let lenin = Object.assign({}, rafael);
+console.log(rafael);
+console.log(lenin);
+lenin.nombre = "Lenin";
+delete rafael.nombre;
+console.log(rafael);
+console.log(lenin);
+
+let arregloNumeros = [1,2,3,4,5];
+let arregloClonado = Object.assign([], arregloNumeros);
+console.log(arregloNumeros);
+console.log(arregloClonado);
+arregloNumeros[0] = 200;
+arregloClonado[0] = 100;
+console.log(arregloNumeros);
+console.log(arregloClonado);
