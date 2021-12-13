@@ -18,7 +18,7 @@ fs.readFile(
 // console.log('TERCERO');
 
 // fs.readFile(
-//    './01-variables.js' ,
+//    './01-variables.ts' ,
 //     'utf-8',
 //     (error, contenido1) =>{
 //         if(error){
