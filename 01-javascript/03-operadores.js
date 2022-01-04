@@ -66,10 +66,11 @@ const respuestaFind = arreglo
             console.log('indiceActual', indiceActual);
             console.log('arregloCompleto', arregloCompleto);
             return valorActual.nombre === "Cristian";
-        }
-    );
-console.log('respuestaFind', respuestaFind);
 
+        }
+
+    );
+console.log('respuestaFind',respuestaFind)
 //FINDINDEX
 //Enviamos una expresion --> TRUTY FALSY
 //Devuelve el primero que cumpla esa condicion
@@ -157,3 +158,6 @@ const respuestaReduce = arreglo
         100 //Acumulador
     );
 console.log('respuestaReduce', respuestaReduce); //100 - X = -46
+
+
+console.log('this is me trying: ')
