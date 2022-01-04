@@ -1,6 +1,6 @@
 // 01-JAVASCRIPT
 
-//          01-variables.js
+//          01-variables.ts
 //Mutables e inmutables
 //Mutables
 
@@ -116,7 +116,9 @@ lesly["gastos"] = 0.8;
 console.log(lesly.gastos); //0.8
 lesly.nombre = undefined;
 console.log(lesly);
+console.log("LLAVES")
 console.log(Object.keys(lesly));
+console.log("VALORES")
 console.log(Object.values(lesly));
 
 delete lesly.nombre; // Eliminar la llave "nombre"
@@ -156,7 +158,7 @@ let lenin = Object.assign({}, rafael);
 console.log(rafael);
 console.log(lenin);
 lenin.nombre = "Lenin";
-delete rafael.nombre;
+//delete rafael.nombre;
 console.log(rafael);
 console.log(lenin);
 
