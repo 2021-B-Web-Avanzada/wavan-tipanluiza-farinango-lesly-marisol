@@ -1,0 +1,103 @@
+<div class="container-md">
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb" style="background-color: white">
+    <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Dog Care Center</li>
+  </ol>
+</nav>
+
+
+  <div class="row">
+
+    <div class="col-3" >
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active" aria-current="true" style="background-color: #002857">
+          Dog Care Center
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">Behavior</button>
+        <button type="button" class="list-group-item list-group-item-action">Care</button>
+        <button type="button" class="list-group-item list-group-item-action">Health</button>
+        <button type="button" class="list-group-item list-group-item-action">Nutrition</button>
+        <button type="button" class="list-group-item list-group-item-action">Training</button>
+      </div>
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active" aria-current="true" style="background-color: #002857">
+          Top Tools &amp; Guides
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">Flea &amp; Tick Center</button>
+        <button type="button" class="list-group-item list-group-item-action">Sympthon Checker</button>
+        <button type="button" class="list-group-item list-group-item-action">Alert &amp; Recalls </button>
+        <button type="button" class="list-group-item list-group-item-action">Chocolate Toxicity Meter</button>
+        <button type="button" class="list-group-item list-group-item-action">Healthy Center</button>
+      </div>
+
+
+    </div>
+    <div class="col-9" style="align-content: center">
+      <img [src]="urlDog" class="img-fluid" alt="">
+      <div class="pl-5">
+        Select a topic:
+        <div class="btn-group  py-3 pl-5">
+          <button type="button" style=" width: 700px;text-align: right; border-color: #002857;font-weight: bold;background-color: white;color: #002857" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+            - Any -
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))">
+            <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home" style="color: #0e6fbe">Behavior</a>
+            <a class="dropdown-item " href="#" data-mode="mode2" data-dir="/foo" style="color: #0e6fbe">Care</a>
+            <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Health</a>
+            <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Nutrition</a>
+            <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Training</a>
+          </div>
+        </div>
+      </div>
+
+
+      <table>
+        <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let elemento of arregloSection2">
+          <td  class="pr-5 py-5"><img src="{{elemento.urlImagen}}" alt=""></td>
+          <td class="pl-5 py-0">
+            <h4>{{elemento.titulo}}</h4>
+            <div class="mb-0" [ngStyle]="{'font-weight':'480','color':'#737373'}" >{{elemento.autor}}</div>
+            <div class="my-0" [ngStyle]="{'color':'#006f9f'}">{{elemento.fecha}}</div>
+            <div class="mt-3" [ngStyle]="{'text-align':'justify'}">{{elemento.resumen}}</div>
+            <div class="my-0"><a href="{{elemento.urlArticulo}}"  [ngStyle]="{'text-decoration':'none','font-weight':'bold','color':'#195aa7'}">Read More</a></div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item"><a class="page-link" href="#">6</a></li>
+          <li class="page-item"><a class="page-link" href="#">7</a></li>
+          <li class="page-item"><a class="page-link" href="#">8</a></li>
+          <li class="page-item"><a class="page-link" href="#">9</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<app-first-section></app-first-section>
+
+
+
+
+<router-outlet></router-outlet>

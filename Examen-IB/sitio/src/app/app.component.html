@@ -1,0 +1,100 @@
+<app-banner-imagenes></app-banner-imagenes>
+<div class="container-fluid" style="background-color: #002857;" >
+<div class="container-md" style="background-color: #002857;padding-top: 20px" >
+<div class="row">
+  <div class="col-10">
+
+    <div class="btn-group" >
+      <button type="button" style="background-color: #002857;font-weight: bold;border-color: #002857" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+        Health
+      </button>
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))" >
+        <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home" style="color: #0e6fbe">Dog Nutrition Center</a>
+        <a class="dropdown-item " href="#" data-mode="mode2" data-dir="/foo"style="color: #0e6fbe">Cat Nutrition Center</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Diseases A-Z</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Veterinary Terms</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Pet Medication</a>
+      </div>
+    </div>
+
+
+
+    <div class="btn-group">
+      <button type="button" style="background-color: #002857;font-weight: bold;border-color: #002857" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+        Emergency
+      </button>
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))">
+        <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home" style="color: #0e6fbe">Emergency A-Z</a>
+        <a class="dropdown-item " href="#" data-mode="mode2" data-dir="/foo" style="color: #0e6fbe">Accidents & Injuries</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Common Emergencies</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Poison & Toxicity</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" style="background-color: #002857;font-weight: bold;border-color: #002857" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+        Care
+      </button>
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))">
+        <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home" style="color: #0e6fbe">Topic Center</a>
+        <a class="dropdown-item " [routerLink]="['/dog-care']" data-mode="mode2" data-dir="/foo" style="color: #0e6fbe">Dog Care Center</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Cat Care Center</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Natural Center</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Reptile & Amphibian Center</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Flea & Tick Survival Guide</a>
+      </div>
+    </div>
+
+
+    <div class="btn-group">
+      <button type="button" style="background-color: #002857;font-weight: bold;border-color: #002857" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Breeds
+      </button>
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))">
+        <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home" style="color: #0e6fbe">Dog</a>
+        <a class="dropdown-item " href="#" data-mode="mode2" data-dir="/foo" style="color: #0e6fbe">Cat</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Horse</a>
+        <a class="dropdown-item" href="#" data-mode="mode4" data-dir="/bar" style="color: #0e6fbe">Reptile & Amphibian</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" style="background-color: #002857;font-weight: bold;border-color: #002857" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+        News
+      </button>
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))">
+        <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home" style="color: #0e6fbe">Views</a>
+        <a class="dropdown-item " href="#" data-mode="mode2" data-dir="/foo" style="color: #0e6fbe">Alerts & Recalls</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Care & Safety</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Health & Science</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Lifestyle</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Petlanthropy</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" style="background-color: #002857;font-weight: bold;border-color: #002857" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+        Tools
+      </button>
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))">
+        <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home" style="color: #0e6fbe">Symptom Checker</a>
+        <a class="dropdown-item " href="#" data-mode="mode2" data-dir="/foo" style="color: #0e6fbe">Chocolate Toxicity Meter</a>
+        <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar" style="color: #0e6fbe">Healthy Weight Tool</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" style="background-color: #002857;font-weight: bold;border-color: #002857" class="btn btn-secondary" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+        Slideshows
+      </button>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
