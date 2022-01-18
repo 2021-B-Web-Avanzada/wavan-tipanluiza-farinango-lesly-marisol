@@ -21,13 +21,13 @@ Entre las funcionalidades más importantes tenemos:
 
 Se ha utilizado una herramienta de gestión llamada Trello para mantener las actividades de todo el ciclo de vida del software de una forma dinámica y organizada:
 
-[ProductBacklog](https://trello.com/b/0ze35kfF/proyecto-web) - Link de Trello
+[Link de Trello](https://trello.com/b/0ze35kfF/proyecto-web) - ProductBacklog
 
 **Figma**
 
 Para el diseño de interfaces se utilizó la herramienta Figma, de igual forma se puede acceder al proyecto con el siguiente Link:
 
-[Diseño](https://www.figma.com/file/uwUxGBkQCPmZHykVIwLy97/Proyecto-aplicaciones-web?node-id=124%3A511) - Link de Figma
+[Link de Figma](https://www.figma.com/file/uwUxGBkQCPmZHykVIwLy97/Proyecto-aplicaciones-web?node-id=124%3A511) - Diseño
 
 ### Diagrama Entidad - Relación
 
