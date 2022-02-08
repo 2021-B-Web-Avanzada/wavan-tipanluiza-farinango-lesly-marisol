@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<div class="container">
+  <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value,editarForm.value.idgenero)"  >
+    <div class="form-group">
+      <div class="row">
+        <div class="col-4">
+          <label>ID</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="ID del género"
+                 formControlName="idgenero">
+        </div>
+        <div class="col-4">
+          <label>Género</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Nombre del género"
+                 formControlName="nombreGenero">
+        </div>
+        <div class="col-4"><br>
+          <button type="submit" class="btn btn-primary" (click)="verListaArtistas()">Ver lista de Artistas</button>
+        </div>
+      </div>
+
+
+
+
+      <label>Año de origen</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Año de origen"
+             formControlName="anioOrigen">
+      <label>Popularidad</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Nivel de popularidad"
+             formControlName="popularidad">
+      <label>País de origen</label>
+      <input type="text"
+             class="form-control"
+             placeholder="País de origen"
+             formControlName="paisOrigen">
+      <label>Instrumento</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Instrumento más usado"
+             formControlName="instrumento">
+    </div>
+    <br><br>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-sm-1">
+        <button type="submit" class="btn btn-success">Guardar</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" class="btn btn-danger" (click)="eliminarGenero(editarForm.value.idgenero)">Eliminar</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+      </div>
+
+    </div>
+
+
+
+
+  </form>
+</div>
+
+
+<app-footer></app-footer>

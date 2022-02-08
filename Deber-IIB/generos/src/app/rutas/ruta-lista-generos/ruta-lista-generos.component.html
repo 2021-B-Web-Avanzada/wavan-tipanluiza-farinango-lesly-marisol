@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="container">
+  <h1>Lista de Géneros</h1><br>
+
+  <button type="button" class="btn btn-danger" (click)="nuevoGenero()">Nuevo género</button><br><br>
+
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Género</th>
+    <th scope="col">Año de Origen</th>
+    <th scope="col">Popularidad</th>
+    <th scope="col">País de Origen</th>
+    <th scope="col">Instrumento</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let genero of generos" (click)="editarGenero(genero.idgenero)">
+    <th scope="row">{{genero.idgenero}}</th>
+    <td>{{genero.nombreGenero}}</td>
+    <td>{{genero.anioOrigen}}</td>
+    <td>{{genero.popularidad}}</td>
+    <td>{{genero.paisOrigen}}</td>
+    <td>{{genero.instrumento}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+
+<app-footer></app-footer>
