@@ -2,6 +2,18 @@
 
  A continuación se describen los directorios de los trabajos:
  
+# SEGUNDO BIMESTRE:
+
+## DEBER 03: CRUD Géneros -Artistas
+DeberIIB/generos
+
+
+
+
+
+
+# PRIMER BIMESTRE:
+ 
 ## DEBER 01: 
 /01-javascript/deber.js
 
