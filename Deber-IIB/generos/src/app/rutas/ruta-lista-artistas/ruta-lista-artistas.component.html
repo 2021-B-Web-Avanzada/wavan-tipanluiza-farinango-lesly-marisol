@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container">
+  <h1 style="color: #13678A" *ngFor="let dato of genero">Lista de Artistas - {{dato.nombreGenero}}</h1><br>
+
+  <button type="button" class="btn"
+          style="background-color: #D98BBD; color:white; font-weight: bold"
+          *ngFor="let dato of genero"
+          (click)="nuevoArtista(dato.idgenero)">Nuevo artista</button><br><br>
+
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+    <tr style="color: #13678A">
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Nacionalidad</th>
+      <th scope="col">Retirado</th>
+      <th scope="col">Tipo de Voz</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let artista of artistas; let i=index" (click)="editarArtista(artista.idartista)">
+        <th scope="row">{{artista.idartista}}</th>
+        <td>{{artista.nombre}}</td>
+        <td>{{artista.edad}}</td>
+        <td>{{artista.nacionalidad}}</td>
+        <td>{{artista.retirado}}</td>
+        <td>{{artista.voz}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row d-flex justify-content-center">
+
+    <div class="col-sm-1">
+      <button type="button" class="btn" style="background-color: #8C4E37; color: white" (click)="salir()">Salir</button>
+    </div>
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>

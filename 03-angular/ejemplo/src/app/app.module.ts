@@ -14,6 +14,19 @@ import {AuthService} from "./servicios/auth/auth.service";
 import {EstaLogueadoGuard} from "./servicios/auth/esta-logueado.guard";
 import {EsAdministradorGuard} from "./servicios/auth/es-administrador.guard";
 import {BannerImagenesModule} from "./componentes/banner-imagenes/banner-imagenes.module";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
+import {InputSwitchModule} from "primeng/inputswitch";
+import {KnobModule} from "primeng/knob";
+import {SplitButtonModule} from "primeng/splitbutton";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule} from "@angular/material/button";
+import { ModalEjemploComponent } from './componentes/modales/modal-ejemplo/modal-ejemplo.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {NgbButtonsModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {SocketIoModule} from "ngx-socket-io";
+
 
 @NgModule({
   //Componentes
@@ -25,21 +38,39 @@ import {BannerImagenesModule} from "./componentes/banner-imagenes/banner-imagene
     RutaInicioComponent,
     RutaUsuarioComponent,
     RutaPostComponent,
-    RutaAppComponent
+    RutaAppComponent,
+    RutaUsuarioPerfilComponent,
+    ModalEjemploComponent
   ],
   //Modulos importados
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BannerImagenesModule
+    BannerImagenesModule,
+    HttpClientModule,
+    FormsModule, // Template Driven Forms,
+    ReactiveFormsModule,
+    InputSwitchModule,
+    KnobModule,
+    SplitButtonModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    NgbModule,
+    NgbButtonsModule,
+    SocketIoModule.forRoot({
+      url:'http://localhost:8080',
+      options:{}
+    })
   ],
   //Servicios
   providers: [
-    AuthService,
+    //AuthService,
     EstaLogueadoGuard,
-    EsAdministradorGuard
+    EsAdministradorGuard,
   ],
   //Componente principal (aqui es donde empieza todo)
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

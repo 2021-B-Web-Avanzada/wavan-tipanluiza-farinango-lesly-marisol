@@ -1,0 +1,80 @@
+<app-header></app-header>
+
+<div class="container">
+  <h4 class="alinear" style="color: #13678A">CREAR NUEVO GÉNERO</h4><br>
+  <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)"  >
+    <div class="form-group">
+      <div class="row  alinear">
+        <div class="col-sm-4 alinear">
+          <label class="col-sm-4 col-form-label">Género:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Nombre del género"
+                 formControlName="nombreGenero">
+        </div>
+      </div>
+      <br>
+
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label class="col-sm-4 col-form-label">Año de origen:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Año de origen"
+                 formControlName="anioOrigen">
+        </div>
+      </div>
+      <br>
+
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label  class="col-sm-4 col-form-label">Popularidad:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Nivel de popularidad"
+                 formControlName="popularidad">
+        </div>
+      </div>
+      <br>
+
+
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label  class="col-sm-4 col-form-label">País de origen:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="País de origen"
+                 formControlName="paisOrigen">
+      </div>
+    </div>
+      <br>
+
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label  class="col-sm-4 col-form-label">Instrumento:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Instrumento más usado"
+                 formControlName="instrumento">
+        </div>
+      </div>
+      <br>
+    </div>
+    <br><br>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-sm-1">
+        <button type="submit" class="btn" style="background-color: #13678A; color: white">Guardar</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" class="btn" style="background-color: #8C4E37; color: white" (click)="salir()">Salir</button>
+      </div>
+    </div>
+
+
+  </form>
+</div>
+
+
+
+<app-footer></app-footer>
