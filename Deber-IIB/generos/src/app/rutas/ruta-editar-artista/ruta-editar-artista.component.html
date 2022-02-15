@@ -1,1 +1,73 @@
-<p>ruta-editar-artista works!</p>
+<app-header></app-header>
+
+<div class="container">
+  <form [formGroup]="editarFormArtista" (ngSubmit)="postForm(editarFormArtista.value,editarFormArtista.value.idartista)"  >
+    <div class="form-group">
+      <div class="row">
+        <div class="col-4">
+          <label>ID</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="ID del artista"
+                 formControlName="idartista">
+        </div>
+        <div class="col-4">
+          <label>Nombre</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Ingrese el nombre del artista"
+                 formControlName="nombre">
+        </div>
+        <div class="col-4"><br>
+        </div>
+      </div>
+      <label>Edad</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Ingrese la edad"
+             formControlName="edad">
+      <label>Nacionalidad</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Ingrese la nacionalidad"
+             formControlName="nacionalidad">
+      <label>Retirado</label>
+      <input type="text"
+             class="form-control"
+             placeholder="¿El artista está retirado?"
+             formControlName="retirado">
+      <label>Tipo de Voz</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Ingrese el tipo de voz"
+             formControlName="voz">
+      <label>IdGenero</label>
+      <input type="text"
+             class="form-control"
+             placeholder="ID del género"
+             formControlName="idgenero">
+    </div>
+    <br><br>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-sm-1">
+        <button type="submit" class="btn btn-success">Guardar</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" class="btn btn-danger" (click)="eliminarArtista(editarFormArtista.value.idartista)">Eliminar</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+      </div>
+
+    </div>
+
+
+
+
+  </form>
+</div>
+
+
+
+<app-footer></app-footer>

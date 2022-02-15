@@ -1,4 +1,4 @@
-export interface listartistasI{
+export interface artistaI{
   idartista:number;
   nombre:string;
   edad:number;

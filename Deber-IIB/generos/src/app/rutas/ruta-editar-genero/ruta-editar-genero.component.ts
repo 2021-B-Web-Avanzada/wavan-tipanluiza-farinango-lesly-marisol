@@ -16,6 +16,7 @@ export class RutaEditarGeneroComponent implements OnInit {
 
   datosGenero: generoI[]=[];
 
+
   editarForm = new FormGroup({
       idgenero: new FormControl(''),
       nombreGenero: new FormControl(''),
@@ -79,8 +80,9 @@ export class RutaEditarGeneroComponent implements OnInit {
   salir(){
     this.router.navigate(['ruta-lista-generos']);
   }
-  verListaArtistas(){
-    this.router.navigate(['ruta-lista-artistas']);
+  verListaArtistas(id:any){
+        this.router.navigate(['ruta-lista-artistas',id]);
+
   }
 
 }

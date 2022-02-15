@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
-import {map, Observable} from 'rxjs';
-import {listagenerosI} from "../../modelos/listageneros.interface";
-import {environment} from "../../../environments/environment";
-import{generoI} from "../../modelos/genero.interface"
-import{listartistasI} from "../../modelos/listartistas.interface";
-import{responseI}from "../../modelos/response.interface"
+import {filter, map, Observable} from 'rxjs';
+import {listagenerosI} from '../../modelos/listageneros.interface';
+import {environment} from '../../../environments/environment';
+import{generoI} from '../../modelos/genero.interface';
+import{listartistasI} from '../../modelos/listartistas.interface';
+import{artistaI} from '../../modelos/artista.interface'
+
 
 
 @Injectable({
@@ -62,16 +63,47 @@ postGenero(form:generoI):Observable<any>{
       .post(url,form,{responseType: 'text'})
 }
 
-getAllArtistas():Observable<listartistasI[]>{
-    const url = environment.urlAPI+'listArtists'
+  getAllArtistas(id:any):Observable<listartistasI[]>{
+    const url = environment.urlAPI+'listArtists/'+id
     return this.http
       .get(url)
       .pipe(
         map(
           (resultadoEnData)=> resultadoEnData as listartistasI[]
         )
+
       )
 
-}
+  }
+
+  getArtista(id:any): Observable<artistaI[]>
+  {
+    const url = environment.urlAPI+'artistaid/'+id
+    return this.http
+      .get(url)
+      .pipe(
+        map(
+          (resultadoEnData)=> resultadoEnData as artistaI[]
+        )
+      );
+  }
+
+  putArtista(form:artistaI, id:any): Observable<any>{
+    const url = environment.urlAPI+'updateArtist/'+id
+    return this.http
+      .put(url,form,{responseType: 'text'});
+  }
+
+  deleteArtista(form:artistaI, id:any):Observable<any>{
+    const url = environment.urlAPI+'deleteArtist/'+id
+    return this.http
+      .delete(url,{responseType: 'text'})
+  }
+
+  postArtista(form:artistaI, id:any):Observable<any>{
+    const url = environment.urlAPI+'addArtist/'+id
+    return this.http
+      .post(url,form,{responseType: 'text'})
+  }
 
 }

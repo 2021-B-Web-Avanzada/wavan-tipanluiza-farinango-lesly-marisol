@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../servicios/api/api.service"
-import {Router} from "@angular/router"
+import {ActivatedRoute, Router} from "@angular/router"
 import {listartistasI} from "../../modelos/listartistas.interface"
+import {generoI} from "../../modelos/genero.interface";
 
 
 @Component({
@@ -12,27 +13,41 @@ import {listartistasI} from "../../modelos/listartistas.interface"
 export class RutaListaArtistasComponent implements OnInit {
 
   artistas:listartistasI[]=[];
+  genero: generoI[]=[];
 
   constructor(
+    private readonly activerouter:ActivatedRoute,
     private readonly api:ApiService,
     private readonly router:Router
   ) { }
 
   ngOnInit(): void {
-    this.api.getAllArtistas().subscribe({
-      next:(data)=>{
-        this.artistas = data
-        console.log(data)
-      }
-    })
+
+
+        let generoid = this.activerouter.snapshot.paramMap.get('id');
+
+        this.api.getGenero(generoid).subscribe({
+          next:(datos)=>{
+            this.genero = datos
+          }
+        })
+
+        this.api.getAllArtistas(generoid).subscribe({
+          next:(data)=>{
+            this.artistas = data
+            console.log(data)
+          }
+        })
+
+
   }
   editarArtista(id:number){
     this.router.navigate(['ruta-editar-artista', id]);
     console.log(id)
   }
 
-  nuevoArtista(){
-    this.router.navigate(['ruta-nuevo-artista']);
+  nuevoArtista(id:number){
+    this.router.navigate(['ruta-nuevo-artista', id]);
   }
 
 }

@@ -28,7 +28,7 @@ const routes: Routes = [
     component:RutaNuevoGeneroComponent
   },
   {
-    path:'ruta-lista-artistas',
+    path:'ruta-lista-artistas/:id',
     component: RutaListaArtistasComponent
   },
   {
@@ -36,7 +36,7 @@ const routes: Routes = [
     component: RutaEditarArtistaComponent
   },
   {
-    path: 'ruta-nuevo-artista',
+    path: 'ruta-nuevo-artista/:id',
     component: RutaNuevoArtistaComponent
   }
 

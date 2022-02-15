@@ -2,7 +2,9 @@
 <div class="container">
   <h1>Lista de Artistas</h1><br>
 
-  <button type="button" class="btn btn-danger" (click)="nuevoArtista()">Nuevo artista</button><br><br>
+  <button type="button" class="btn btn-danger"
+          *ngFor="let dato of genero"
+          (click)="nuevoArtista(dato.idgenero)">Nuevo artista</button><br><br>
 
 
   <table class="table table-hover">
@@ -17,13 +19,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let artista of artistas" (click)="editarArtista(artista.idartista)">
-      <th scope="row">{{artista.idartista}}</th>
-      <td>{{artista.nombre}}</td>
-      <td>{{artista.edad}}</td>
-      <td>{{artista.nacionalidad}}</td>
-      <td>{{artista.retirado}}</td>
-      <td>{{artista.voz}}</td>
+    <tr *ngFor="let artista of artistas; let i=index" (click)="editarArtista(artista.idartista)">
+        <th scope="row">{{artista.idartista}}</th>
+        <td>{{artista.nombre}}</td>
+        <td>{{artista.edad}}</td>
+        <td>{{artista.nacionalidad}}</td>
+        <td>{{artista.retirado}}</td>
+        <td>{{artista.voz}}</td>
     </tr>
     </tbody>
   </table>

@@ -19,7 +19,9 @@
                  formControlName="nombreGenero">
         </div>
         <div class="col-4"><br>
-          <button type="submit" class="btn btn-primary" (click)="verListaArtistas()">Ver lista de Artistas</button>
+          <button type="button" class="btn btn-primary"
+                  *ngFor="let dato of datosGenero"
+                  (click)="verListaArtistas(dato.idgenero)">Ver lista de Artistas</button>
         </div>
       </div>
 

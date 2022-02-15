@@ -1,1 +1,46 @@
-<p>ruta-nuevo-artista works!</p>
+<app-header></app-header>
+
+<div class="container">
+  <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)"  >
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Ingrese el nombre del artista"
+             formControlName="nombre">
+      <label>Edad</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Ingrese la edad del artista"
+             formControlName="edad">
+      <label>Nacionalidad</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Ingrese la nacionalidad"
+             formControlName="nacionalidad">
+      <label>Retirado</label>
+      <input type="text"
+             class="form-control"
+             placeholder="¿El artista está retirado?"
+             formControlName="retirado">
+      <label>Tipo de Voz</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Ingrese el tipo de voz"
+             formControlName="voz">
+      <label>ID del género al que pertenece</label>
+      <input type="text"
+             class="form-control"
+             placeholder="ID género"
+             formControlName="idgenero">
+    </div>
+    <br><br>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+  </form>
+</div>
+
+
+
+<app-footer></app-footer>
+
