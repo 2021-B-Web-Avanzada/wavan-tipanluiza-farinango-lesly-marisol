@@ -5,7 +5,7 @@
 # SEGUNDO BIMESTRE:
 
 ## DEBER 03: CRUD Géneros -Artistas
-DeberIIB/generos
+Deber-IIB/generos
 
 
 
