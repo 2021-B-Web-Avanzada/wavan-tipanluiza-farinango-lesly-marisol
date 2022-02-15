@@ -1,15 +1,16 @@
 <app-header></app-header>
 <div class="container">
-  <h1>Lista de Artistas</h1><br>
+  <h1 style="color: #13678A" *ngFor="let dato of genero">Lista de Artistas - {{dato.nombreGenero}}</h1><br>
 
-  <button type="button" class="btn btn-danger"
+  <button type="button" class="btn"
+          style="background-color: #D98BBD; color:white; font-weight: bold"
           *ngFor="let dato of genero"
           (click)="nuevoArtista(dato.idgenero)">Nuevo artista</button><br><br>
 
 
   <table class="table table-hover">
     <thead class="thead-dark">
-    <tr>
+    <tr style="color: #13678A">
       <th scope="col">Id</th>
       <th scope="col">Nombre</th>
       <th scope="col">Edad</th>
@@ -29,6 +30,13 @@
     </tr>
     </tbody>
   </table>
+  <div class="row d-flex justify-content-center">
+
+    <div class="col-sm-1">
+      <button type="button" class="btn" style="background-color: #8C4E37; color: white" (click)="salir()">Salir</button>
+    </div>
+  </div>
+
 </div>
 
 

@@ -2,64 +2,89 @@
 
 <div class="container">
   <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value,editarForm.value.idgenero)"  >
-    <div class="form-group">
-      <div class="row">
-        <div class="col-4">
-          <label>ID</label>
+    <div class="form-group ">
+      <div class="row  alinear">
+        <div class="col-sm-2 alinear">
+          <label class="col-sm-2 col-form-label">ID</label>
           <input type="text"
                  class="form-control"
                  placeholder="ID del género"
-                 formControlName="idgenero">
+                 formControlName="idgenero"
+                  readonly>
         </div>
-        <div class="col-4">
-          <label>Género</label>
+        <div class="col-2 alinear"><br>
+          <button type="button" class="btn" style="background-color: #D98BBD; color: white"
+                  *ngFor="let dato of datosGenero"
+                  (click)="verListaArtistas(dato.idgenero)">Ver lista de Artistas</button>
+        </div>
+      </div>
+      <br>
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label class="col-sm-4 col-form-label">Género:</label>
           <input type="text"
                  class="form-control"
                  placeholder="Nombre del género"
                  formControlName="nombreGenero">
         </div>
-        <div class="col-4"><br>
-          <button type="button" class="btn btn-primary"
-                  *ngFor="let dato of datosGenero"
-                  (click)="verListaArtistas(dato.idgenero)">Ver lista de Artistas</button>
+      </div>
+      <br>
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label class="col-sm-4 col-form-label">Año de origen:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Año de origen"
+                 formControlName="anioOrigen">
+        </div>
+      </div>
+      <br>
+
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label class="col-sm-4 col-form-label">Popularidad:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Nivel de popularidad"
+                 formControlName="popularidad">
+        </div>
+      </div>
+      <br>
+
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label class="col-sm-4 col-form-label">País de origen:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="País de origen"
+                 formControlName="paisOrigen">
+        </div>
+      </div>
+
+      <br>
+      <div class="row alinear">
+        <div class="col-4 alinear">
+          <label class="col-sm-4 col-form-label">Instrumento:</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Instrumento más usado"
+                 formControlName="instrumento">
         </div>
       </div>
 
 
-
-
-      <label>Año de origen</label>
-      <input type="text"
-             class="form-control"
-             placeholder="Año de origen"
-             formControlName="anioOrigen">
-      <label>Popularidad</label>
-      <input type="text"
-             class="form-control"
-             placeholder="Nivel de popularidad"
-             formControlName="popularidad">
-      <label>País de origen</label>
-      <input type="text"
-             class="form-control"
-             placeholder="País de origen"
-             formControlName="paisOrigen">
-      <label>Instrumento</label>
-      <input type="text"
-             class="form-control"
-             placeholder="Instrumento más usado"
-             formControlName="instrumento">
     </div>
     <br><br>
 
     <div class="row d-flex justify-content-center">
       <div class="col-sm-1">
-        <button type="submit" class="btn btn-success">Guardar</button>
+        <button type="submit" class="btn" style="background-color: #13678A; color: white">Guardar</button>
       </div>
       <div class="col-sm-1">
         <button type="button" class="btn btn-danger" (click)="eliminarGenero(editarForm.value.idgenero)">Eliminar</button>
       </div>
       <div class="col-sm-1">
-        <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+        <button type="button" class="btn" style="background-color: #8C4E37; color: white" (click)="salir()">Salir</button>
       </div>
 
     </div>
