@@ -1,42 +1,78 @@
 <app-header></app-header>
 
 <div class="container">
+  <h4 class="alinear" style="color: #13678A">CREAR NUEVO ARTISTA</h4><br>
   <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)"  >
     <div class="form-group">
-      <label>Nombre</label>
-      <input type="text"
-             class="form-control"
-             placeholder="Ingrese el nombre del artista"
-             formControlName="nombre">
-      <label>Edad</label>
-      <input type="text"
-             class="form-control"
-             placeholder="Ingrese la edad del artista"
-             formControlName="edad">
-      <label>Nacionalidad</label>
-      <input type="text"
-             class="form-control"
-             placeholder="Ingrese la nacionalidad"
-             formControlName="nacionalidad">
-      <label>Retirado</label>
-      <input type="text"
-             class="form-control"
-             placeholder="¿El artista está retirado?"
-             formControlName="retirado">
-      <label>Tipo de Voz</label>
-      <input type="text"
-             class="form-control"
-             placeholder="Ingrese el tipo de voz"
-             formControlName="voz">
-      <label>ID del género al que pertenece</label>
+      <div class="row alinear">
+        <div class="col-sm-4 alinear">
+          <label class="col-sm-4 col-form-label">Nombre</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Ingrese el nombre del artista"
+                 formControlName="nombre">
+        </div>
+      </div>
+      <br>
+      <div class="row alinear">
+        <div class="col-sm-4 alinear">
+          <label class="col-sm-4 col-form-label">Nacionalidad</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Ingrese la nacionalidad"
+                 formControlName="nacionalidad">
+        </div>
+      </div>
+      <br>
+      <div class="row alinear">
+        <div class="col-sm-2 alinear">
+             <label class="col-sm-6 col-form-label">Retirado</label>
+             <input type="text"
+                    class="form-control"
+                    placeholder="¿retirado?"
+                    formControlName="retirado">
+        </div>
+        <div class="col-sm-2 alinear">
+             <label class="col-sm-6 col-form-label">Edad</label>
+             <input type="text"
+                    class="form-control"
+                    placeholder="edad "
+                    formControlName="edad">
+           </div>
+         </div>
+      <br>
+      <div class="row alinear">
+        <div class="col-sm-4 alinear">
+          <label class="col-sm-2 col-form-label">Tipo de Voz</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Ingrese el tipo de voz"
+                 formControlName="voz">
+        </div>
+      </div>
+
+
+      <div class="row alinear">
+        <div  class="col-sm-2 alinear">
+      <label class="col-sm-6 col-form-label">IDgénero</label>
       <input type="text"
              class="form-control"
              placeholder="ID género"
-             formControlName="idgenero">
+             formControlName="idgenero"
+             readonly>
+    </div>
+  </div>
     </div>
     <br><br>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-    <button type="button" class="btn btn-dark" (click)="salir()">Salir</button>
+    <div class="row d-flex justify-content-center">
+      <div class="col-sm-1">
+        <button type="submit" class="btn" style="background-color: #13678A; color: white">Guardar</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" class="btn" style="background-color: #8C4E37; color: white" (click)="salir()">Salir</button>
+      </div>
+    </div>
+
   </form>
 </div>
 

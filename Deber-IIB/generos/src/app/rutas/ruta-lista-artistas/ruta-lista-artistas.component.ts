@@ -49,5 +49,9 @@ export class RutaListaArtistasComponent implements OnInit {
   nuevoArtista(id:number){
     this.router.navigate(['ruta-nuevo-artista', id]);
   }
+  salir(){
+    let idgenero = this.activerouter.snapshot.paramMap.get('id');
+    this.router.navigate(['ruta-editar-genero', idgenero]);
+  }
 
 }
