@@ -7,6 +7,8 @@
 ## DEBER 03: CRUD Géneros -Artistas
 Deber-IIB/generos
 
+## DEBER 04: Ensayo Microservicios vs SOA: Caso de estudio Netflix
+Deber 04 Ensayo/Ensayo Microservicios vs SOA.pdf
 
 
 
