@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
 body{
     background-image: url("https://backgroundlabs.com/wp-content/uploads/2013/03/dandelion-seeds-pattern.png");
+}
+
+.remove-bg{
+    filter:brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+.leader-title{
+    font-family: 'Press Start 2P', cursive;
 }
 
 .bg-7 h1{
@@ -132,7 +143,6 @@ body{
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    background-color: #DE5E97;
     color: #fff;
     display: flex;
     justify-content: center;
