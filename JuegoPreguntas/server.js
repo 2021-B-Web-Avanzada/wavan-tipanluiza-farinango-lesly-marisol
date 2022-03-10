@@ -31,13 +31,21 @@ io.on('connection', (socket) => {
         players.push(player);
         console.log(name,'is now connected')
         console.log(players);
-        socket.emit('send_question',)
+        io.emit('question',question.q)
     });
 
-    socket.on('send_response',response =>{
+    socket.on('response',response =>{
         //do something with response
         console.log(response);
-    })
+
+        //Validar la respuesta
+        if(+response === question.a){
+            question = createQuestion();
+            increasePoints(socket.id);
+
+            io.emit('question',question.q)
+        }
+    });
 
     socket.on('disconnect', () => {
         //remove the player from the local array
@@ -45,6 +53,19 @@ io.on('connection', (socket) => {
         console.log(socket.id,'user disconnected');
     });
 });
+
+function increasePoints(id){
+    players = players.map(player=>{
+        if(player.id === id){
+            return{
+                ...player,
+                points: player.points+1
+            }
+        }else{
+            return player;
+        }
+    });
+}
 
 server.listen(3000, () => {
     console.log('listening on *:3000');
