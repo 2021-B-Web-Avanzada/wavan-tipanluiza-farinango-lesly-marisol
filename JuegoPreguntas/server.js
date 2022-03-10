@@ -12,7 +12,9 @@ app.get('/', (request, response) => {
 app.use(express.static("public"));
 
 io.on('connection', (socket) => {
-    console.log(socket.id,'is now connected');
+    socket.on('user_joined',(name)=>{
+        console.log(name,'is now connected')
+    })
 
     socket.on('disconnect', () => {
         console.log(socket.id,'user disconnected');
