@@ -31,7 +31,7 @@ io.on('connection', (socket) => {
         players.push(player);
         console.log(name,'is now connected')
         console.log(players);
-        io.emit('question',question.q)
+        updateGame();
     });
 
     socket.on('response',response =>{
@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
             question = createQuestion();
             increasePoints(socket.id);
 
-            io.emit('question',question.q)
+            updateGame();
         }
     });
 
@@ -65,6 +65,13 @@ function increasePoints(id){
             return player;
         }
     });
+}
+
+function updateGame(){
+    const leaderboard = players.sort((a,b)=>b.points-a.points)
+        .slice(0,10);
+    io.emit('question',question.q)
+    io.emit('leaderboard', leaderboard);
 }
 
 server.listen(3000, () => {

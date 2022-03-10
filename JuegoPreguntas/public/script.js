@@ -3,6 +3,7 @@ const submissionEl = document.getElementById('submission');
 const introEl = document.getElementById('intro');
 const gameEl = document.getElementById('game');
 const questionEl = document.getElementById('question');
+const leaderboardEl = document.getElementById('leaderboard');
 let socket = undefined;
 
 userEl.addEventListener('submit', (e)=>{
@@ -22,6 +23,12 @@ function startGame(){
     socket.on('question',(question)=>{
         questionEl.innerText = question;
     });
+
+    socket.on('leaderboard', leaderboard=>{
+        leaderboardEl.innerHTML =`
+        ${leaderboard.map(player=> `<li class="flex justify-between"><strong>${player.name}</strong>${player.points}</li>`)}
+        `
+    })
 
 }
 
