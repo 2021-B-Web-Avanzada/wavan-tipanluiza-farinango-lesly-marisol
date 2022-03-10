@@ -12,7 +12,11 @@ app.get('/', (request, response) => {
 app.use(express.static("public"));
 
 io.on('connection', (socket) => {
-    console.log(socket.id,'a user connected');
+    console.log(socket.id,'is now connected');
+
+    socket.on('disconnect', () => {
+        console.log(socket.id,'user disconnected');
+    });
 });
 
 server.listen(3000, () => {
