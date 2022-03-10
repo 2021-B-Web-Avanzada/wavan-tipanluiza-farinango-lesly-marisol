@@ -26,7 +26,8 @@ function startGame(){
 
     socket.on('leaderboard', leaderboard=>{
         leaderboardEl.innerHTML =`
-        ${leaderboard.map(player=> `<li class="flex justify-between"><strong>${player.name}</strong>${player.points}</li>`)}
+        ${leaderboard.map(player=> `<li class="flex justify-between text-purple-900">
+            <strong>${player.name}</strong>${player.points}</li>`)}
         `
     })
 
