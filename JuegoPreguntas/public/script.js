@@ -21,7 +21,7 @@ function startGame(){
     introEl.classList.add('hidden')
     gameEl.classList.remove('hidden');
     socket.on('question',(question)=>{
-        questionEl.innerText = question;
+        questionEl.innerText = `${question} = ?`;
     });
 
     socket.on('leaderboard', leaderboard=>{
