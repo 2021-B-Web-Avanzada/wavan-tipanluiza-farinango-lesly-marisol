@@ -5,7 +5,14 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
+const {
+    createQuestion,
+    getRandomNumber
+}=require('./functions')
+
 let players = [];
+let question = createQuestion();
+console.log(question)
 
 app.get('/', (request, response) => {
     response.sendFile(__dirname + '/views/index.html');
@@ -23,7 +30,13 @@ io.on('connection', (socket) => {
         }
         players.push(player);
         console.log(name,'is now connected')
-        console.log(players)
+        console.log(players);
+        socket.emit('send_question',)
+    });
+
+    socket.on('send_response',response =>{
+        //do something with response
+        console.log(response);
     })
 
     socket.on('disconnect', () => {
