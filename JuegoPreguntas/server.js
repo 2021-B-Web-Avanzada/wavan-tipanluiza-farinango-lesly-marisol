@@ -15,10 +15,10 @@ let question = createQuestion();
 console.log(question)
 
 app.get('/', (request, response) => {
-    response.sendFile(__dirname + '/views/index.html');
+    response.sendFile(__dirname + '/FrontEnd/index.html');
 });
 
-app.use(express.static("public"));
+app.use(express.static("FrontEnd"));
 
 io.on('connection', (socket) => {
     socket.on('user_joined',(name)=>{
@@ -35,9 +35,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('response',response =>{
-        //do something with response
         console.log(response);
-
         //Validar la respuesta
         if(+response === question.a){
             question = createQuestion();
